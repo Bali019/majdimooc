@@ -1,0 +1,73 @@
+{% extends '::base.html.twig' %}
+{% block hn %}
+
+          
+    
+    
+    <div class="comments_form_wrap">
+                                <h2 class="section_title comments_form_title">Update Comment</h2>
+                                <div class="comments_form">
+                                    <div id="respond" class="comment-respond">
+                                        <form method="POST" action="" class="comment-form">
+                                            <div class="comments_notes">{{form_widget(f.Personne)}}</div>
+                                            
+                                            <div class="comments_field comments_message">
+                                                <label for="comment" class="required" placeholder="Comment">{{form_widget(f.contenu)}}</label>
+                                               
+                                            </div>
+                                            
+                                               {{form_rest(f)}} 
+                                            
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+    
+    
+    
+    
+     <h2 class="section_title comments_list_title"> Comments</h2>
+    {% for i in commentaires %}
+
+      
+           <div class="comments_pagination"></div>
+    <div id="comments" class="comments_list_wrap">
+                               
+                                <ul class="comments_list">
+                                    <li id="comment-1" class="comment even thread-even depth-1 comment_item">
+                                        <div class="comment_author_avatar">
+											<img alt="" src="{{ asset('http://1.gravatar.com/avatar/d2700afddcd9c659ff78183408184c6c?s=75&amp;d=mm&amp;r=g') }}" srcset="{{ asset('http://1.gravatar.com/avatar/d2700afddcd9c659ff78183408184c6c?s=75&d=mm&r=g') }}" class="avatar avatar-75 photo" height="75" width="75">
+										</div>
+                                        <div class="comment_content">
+                                            <div class="comment_info">
+                                                <span class="comment_author">{{i.personne.nom}}</span>
+                                                <span class="comment_date">
+													<span class="comment_date_label">Posted</span> 
+													<span class="comment_date_value">{{i.date|date("m/d/Y")}}</span>
+												</span>
+                                                
+                                            </div>
+                                            <div class="comment_text_wrap">
+                                                <div class="comment_text">
+                                                    <p>{{i.contenu}}</p>
+                                                </div>
+                                            </div>
+                                            <div class="comment_reply"><a rel="nofollow" class="comment-reply-link" href="{{path("modifier",{'id':i.id})}}">Modifier</a></div> <div class="comment_reply"><a rel="nofollow" class="comment-reply-link" href="{{path("supprimer",{'id':i.id})}}">Supprimer</a></div>
+                                        
+                                        </div>
+                                    </li>
+                                </ul>
+                                  </br>      
+                                  </br>   
+                                <div class="comments_pagination"></div>
+                            </div>          
+          
+
+            {% endfor %}
+            
+            
+ 
+                 
+{%endblock%}          
+                 
+              

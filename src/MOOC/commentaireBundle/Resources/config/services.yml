@@ -1,0 +1,4 @@
+services:
+#    moo_ccommentaire.example:
+#        class: MOOC\commentaireBundle\Example
+#        arguments: [@service_id, "plain_value", %parameter%]

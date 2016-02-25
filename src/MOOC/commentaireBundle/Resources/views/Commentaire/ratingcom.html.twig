@@ -1,0 +1,50 @@
+{% extends 'MOOCcommentaireBundle::index2.html.twig' %}
+
+
+
+{% block body %}
+    <center>
+        <h1>Recherche Liste des commantaire </h1>
+        <table border="1" >
+        {% for i in commentaires %}
+           
+            <td> {{i.personne.nom}}<br/></td>
+           <td> {{i.date|date("m/d/Y")}}<br/>
+            {{i.contenu}}<br/></td>
+      
+           <td> <a href="{{path("supprimer",{'id':i.id})}}">Supprimer</a> <br/></td>
+         <td>   <a href="{{path("modifier",{'id':i.id})}}">Modifier</a> <br/></td>
+     
+            </tr>
+        {% endfor %}
+        </table>
+        <br/>
+        <br/>
+        <br/>
+        <form method="POST" action=""  class="btn btn-success">
+            <table alin="center">
+                <tr><td>Personne:</td><td>{{form_widget(f.Personne)}}</td></tr>
+              
+                <tr><td>contenu:</td><td>{{form_widget(f.contenu)}}</td></tr>
+
+            </table>
+        {{form_rest(f)}}   
+        </form>
+    </center>
+
+
+
+    <center>
+        {{form(form2)  }} 
+
+
+        <form name="stars" type="submit"method="POST">    
+           
+            <input type="hidden" name="text" value=""/>
+
+
+
+            <input type="submit" value="Voter" class="btn btn-success" onclick="show();" /></p>
+        </form>
+    </center>
+{% endblock %}

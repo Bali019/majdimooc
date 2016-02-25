@@ -1,0 +1,20 @@
+<head>
+<link rel="stylesheet" type="text/css" href="{{ asset('bundles/starrating/css/rating.css') }}" />
+  <link rel="stylesheet" type="text/css" href="{{asset('bundles/MOOCcommentaire/css/bootstrap.min.css')}}"/>
+        <link rel="stylesheet" type="text/css" href="{{asset('bundles/MOOCcommentaire/css/font-awesome.min.css')}}"/>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    {% javascripts
+      '@StarRatingBundle/Resources/public/js/rating.js' %}
+      <script src="{{ asset_url }}"></script>
+      
+    {% endjavascripts %}
+    <script language="javascript" type="text/javascript">
+        function show(){var x = $('.rating-well .star-full').length;
+        window.document.stars.text.value=x;
+    }
+        </script>
+    
+</head>
+<body>
+ {% block body %} {% endblock  %}
+ </body>

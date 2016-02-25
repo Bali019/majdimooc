@@ -1,0 +1,29 @@
+moo_ccommentaire_homepage:
+    path:     /hello
+    defaults: { _controller: MOOCcommentaireBundle:Default:index }
+Commentaire:
+    path:     /Commentaire/{id}
+    defaults: { _controller: MOOCcommentaireBundle:Commentaire2:commenter }
+Commentaireaff:
+    path:     /Commentaireaff/{id}
+    defaults: { _controller: MOOCcommentaireBundle:Commentaire:ajout }
+vote:
+    path:     /vote/{id}
+    defaults: { _controller: MOOCcommentaireBundle:Commentaire:rating }
+
+supprimer:
+    path:     /supprimer/{id}
+    defaults: { _controller: MOOCcommentaireBundle:Commentaire:delete }
+    
+modifier:
+    path:     /modifier/{id}
+    defaults: { _controller: MOOCcommentaireBundle:Commentaire2:modifier }
+pi_cour_list:
+    path:     /hello
+    defaults: { _controller: MOOCcommentaireBundle:Default:index }
+pi_chapitre_list:
+    path:     /hello
+    defaults: { _controller: MOOCcommentaireBundle:Default:index }
+pi_graphe:
+    path:     /hello
+    defaults: { _controller: MOOCcommentaireBundle:Default:index }

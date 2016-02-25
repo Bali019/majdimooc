@@ -1,0 +1,26 @@
+
+{{ 10|rating }}
+<table border="1">
+<h1>Recherche Liste des commantaire </h1>
+{% for i in commentaires %}
+    {{i.personne.nom}}
+    {{i.date|date("m/d/Y")}}<br/>
+    {{i.contenu}}
+    <br/>
+    <br/>
+    <br/>
+{% endfor %}
+<br/>
+<br/>
+<br/>
+<form method="POST" action="" >
+<table>
+    <tr><td>Personne:</td><td>{{form_widget(f.Personne)}}</td></tr>
+     <tr><td>Cours:</td><td>{{form_widget(f.Cours)}}</td></tr>
+ <tr><td>contenu:</td><td>{{form_widget(f.contenu)}}</td></tr>
+     <tr><td>date:</td><td>{{form_widget(f.date)}}</td></tr>    
+</table>
+      {{form_rest(f)}}
+</form>
+</table>
+
